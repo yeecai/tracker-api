@@ -8,7 +8,7 @@ export interface JwtPayload {
 }
 
 @Injectable()
-// 验证请求头中的token
+
 export default class JwtAuthStrategy extends PassportStrategy(Strategy, 'jwt') {
     constructor() {
         super({

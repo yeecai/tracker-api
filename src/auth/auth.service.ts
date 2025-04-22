@@ -28,15 +28,15 @@ export class AuthService {
     const findUser = await this.authService.findOne(
       { where: { name: loginData.name } }
     );
-    // 没有找到
+
     if (!findUser) return new BadRequestException('用户不存在');
 
-    // 找到了对比密码
+
     const compareRes: boolean = bcryptjs.compareSync(
       loginData.password,
       findUser.password,
     );
-    // 密码不正确
+
     if (!compareRes) return new BadRequestException('密码不正确');
     const payload = { name: findUser.name };
 

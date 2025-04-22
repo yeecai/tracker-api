@@ -2,11 +2,11 @@
 import { IsNotEmpty } from 'class-validator';
 
 export class CreateAuthDto {
-    //   @ApiProperty({ description: '姓名' })
+    //   @ApiProperty({ description: 'name' })
     @IsNotEmpty({ message: 'name is required' })
     name: string;
 
-    //   @ApiProperty({ description: '密码' })
+    //   @ApiProperty({ description: 'password' })
     @IsNotEmpty({ message: 'password is required' })
     password: string;
 }
